@@ -42,12 +42,10 @@ def consultar_valores():
         capacidade = capacidade_caminhao[porte]
         print(f"{porte}\t\t{capacidade}\t\t{custo}")
 
-
 dicionario_itens = {"celular": 0.5, "geladeira": 60.0, "freezer": 100.0, "cadeira": 5.0, "luminária": 0.8, "lavadora de roupa": 120.0}
 
 #opção 3 menu principal:
 def orcamento():
-
     
     mostrar_submenu()
     opcao_submenu = None
@@ -109,7 +107,7 @@ def orcamento():
        while cidade_chegada_upper not in cidades:
             print(f"\n A cidade '{cidade_chegada_upper}' não está na lista.")  
             cidade_chegada = input('\nDigite a cidade de chegada: ')
-            cidade_chegada_upper = cidade_chegada.upper()       
+            cidade_chegada_upper = cidade_chegada.upper() 
     
        peso_total = 0
        peso_total_final = 0
