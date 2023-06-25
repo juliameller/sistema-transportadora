@@ -33,10 +33,10 @@ def consulta_cidades():
     for i, cidade in enumerate(cidades):
         print(f"{i+1}. {cidade}")
 
-# opção 2 do menu principal. tabela com os tipos de caminhões disponíveis, a capacidade e o custo de cada tipo;
+# opção 2 do menu principal. 
 def consultar_valores():
     print('---------------VALORES----------------')
-    print(f'PORTE\t\tCAPACIDADE\tCUSTO')
+    print(f'PORTE\t\tCAPACIDADE(Kg)\tCUSTO')
     for porte in porte_caminhao:
         custo = porte_caminhao[porte]
         capacidade = capacidade_caminhao[porte]
@@ -58,7 +58,7 @@ def orcamento():
 
 #opção 1 do submenu
     if opcao_submenu == 1:
-        print('Lista de itens cadastrados: ')
+        print('\nLista de itens cadastrados: ')
         for nome_item, peso_item in dicionario_itens.items():
             print(f"{nome_item} - {peso_item} kg")
 
@@ -159,14 +159,14 @@ def orcamento():
                 contagem_medio += 1
                 custo_total += custo
                 peso_total -= 5000
-            elif peso_total >= 10000:
+            elif peso_total > 5000:
                 custo = distancia * porte_caminhao['GRANDE']
                 contagem_grande += 1
                 custo_total += custo
                 peso_total = peso_total - 10000
                
         
-       print('-----------------------COTAÇÃO---------------------------')
+       print('\n-----------------------COTAÇÃO---------------------------')
        print(f'\nDe {cidade_partida_upper} para {cidade_chegada_upper}, a distância é de {distancia} km')
        print('\nOs itens transportados e quantidades são: ')
        for item, quantidade in dicionario_itens_qtds.items():
@@ -176,14 +176,14 @@ def orcamento():
        print(f'{contagem_pequeno} caminhão(ões) de porte PEQUENO')
        print(f'{contagem_medio} caminhão(ões) de porte MÉDIO')
        print(f'{contagem_grande} caminhão(ões) de porte GRANDE')
-       print(f'\nO valor total do transporte dos itens é R$ {custo_total}.')
+       print(f'\nO valor total do transporte dos itens é R$ {custo_total:.2f}.')
 
                   
 
 # MENU PRINCIPAL
 while opcao_menu_principal != 4:
     if opcao_menu_principal == 1:
-        print('Você selecionou "Consultar trechos disponíveis", abaixo são as cidades disponiveis:')
+        print('\nVocê selecionou "Consultar trechos disponíveis", abaixo são as cidades disponiveis:')
         consulta_cidades()
         while True:
             voltar_menu_principal = input("\nDigite '0' para voltar ao menu inicial: ")
